@@ -1,0 +1,10 @@
+apiVersion: core.openfunction.io/v1beta2
+kind: Function
+metadata:
+  name: logs-async-handler
+spec:
+  build:
+    srcRepo:
+      bundleContainer:
+        image: openfunctiondev/sample-source-code:latest
+      sourceSubPath: "/samples/functions/async/logs-handler-function/"
