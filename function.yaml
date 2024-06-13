@@ -18,7 +18,6 @@ spec:
       sourceSubPath: "/"
       revision: "main"
   serving:
-    runtime: knative # default to knative
     template:
       containers:
         - name: function # DO NOT change this
