@@ -1,7 +1,7 @@
 apiVersion: core.openfunction.io/v1beta2
 kind: Function
 metadata:
-  name: minio-event
+  name: logs
 spec:
   version: "v1.0.0"
   image: "davidbackxdataroots/sample-python-func:v1"
@@ -10,7 +10,7 @@ spec:
   build:
     builder: "openfunction/gcp-builder:v1"
     env:
-      GOOGLE_FUNCTION_TARGET: "hello_world"
+      GOOGLE_FUNCTION_TARGET: "get_logs"
       GOOGLE_FUNCTION_SIGNATURE_TYPE: "http"
       GOOGLE_FUNCTION_SOURCE: "main.py"
     srcRepo:

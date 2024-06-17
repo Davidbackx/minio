@@ -12,3 +12,8 @@ def hello_world(request):
 
     print("Hello world")
     return "hello world"
+
+def get_logs(request):
+    with open("/tmp/log.txt", "r") as f:
+        return f.read()
+    
