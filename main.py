@@ -10,7 +10,7 @@ client = Minio(
     secure=False,
 )
 
-def set_object():
+def set_object(request):
     bucket_name = "testbucket"
     object_key = "log.txt"
 
@@ -47,21 +47,6 @@ def get_object():
         response.close()
         response.release_conn()    
 
-def hello_world(request):
-    if request.is_json:
-        print(request.json)
-    else:
-        print(request.data)
-        print(request.form)
-        
-    # write to log    
-    print("Hello world")
-    return "hello world"
-
-def get_logs(request):
-    with open("/tmp/log.txt", "r") as f:
-        return f.read()
-    
     
 if __name__ == "__main__":
     print(set_object())
