@@ -46,6 +46,10 @@ def get_object():
     finally:
         response.close()
         response.release_conn()    
+        
+        
+def hello_world(request):
+    return "Hello World!"
 
     
 if __name__ == "__main__":
