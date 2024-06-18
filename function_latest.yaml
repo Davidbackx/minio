@@ -4,15 +4,15 @@ metadata:
   name: logs
 spec:
   version: "v1.0.0"
-  image: "davidbackxdataroots/sample-python-func:v1"
+  image: "davidbackxdataroots/minio-func"
   imageCredentials:
     name: push-secret
   build:
     builder: "openfunction/gcp-builder:v1"
     env:
-      GOOGLE_FUNCTION_TARGET: "get_logs"
+      GOOGLE_FUNCTION_TARGET: "set_object"
       GOOGLE_FUNCTION_SIGNATURE_TYPE: "http"
-      GOOGLE_FUNCTION_SOURCE: "main.py"
+      GOOGLE_FUNCTION_SOURCE: "app.py"
     srcRepo:
       url: "https://github.com/Davidbackx/minio.git"
       sourceSubPath: "/"

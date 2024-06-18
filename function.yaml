@@ -1,7 +1,7 @@
 apiVersion: core.openfunction.io/v1beta2
 kind: Function
 metadata:
-  name: python-sample
+  name: minio-event
 spec:
   version: "v1.0.0"
   image: "davidbackxdataroots/sample-python-func:v1"
@@ -18,7 +18,6 @@ spec:
       sourceSubPath: "/"
       revision: "main"
   serving:
-    runtime: knative # default to knative
     template:
       containers:
         - name: function # DO NOT change this

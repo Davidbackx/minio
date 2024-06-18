@@ -38,20 +38,4 @@ def set_object(request):
     return data
 
 
-def get_object():
-    try:
-        response = client.get_object("testbucket", "log.txt")
-        print(response.read())
-    # Read data from response.
-    finally:
-        response.close()
-        response.release_conn()    
-        
-        
-def hello_world(request):
-    return "Hello World!"
-
-    
-if __name__ == "__main__":
-    print(set_object())
     
