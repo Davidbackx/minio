@@ -1,22 +1,22 @@
 from minio import Minio
-from minio.sse import SseCustomerKey
 from datetime import datetime
 import io
 
-client = Minio(
-    "localhost:9000",
-    access_key="sQTWYbkJoNcF9qH764Je",
-    secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
-    secure=False,
-)
 
 def set_object(request):
+    client = Minio(
+        "localhost:9000",
+        access_key="sQTWYbkJoNcF9qH764Je",
+        secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
+        secure=False,
+    )
     bucket_name = "testbucket"
     object_key = "log.txt"
 
     try:
         response = client.get_object(bucket_name, object_key)
         current_content = response.read().decode('utf-8')
+        print('connection successful')
 
     finally:
         response.close()
@@ -35,7 +35,5 @@ def set_object(request):
     )
     
     data = client.get_object(bucket_name, object_key).read()
+    print(data)
     return data
-
-
-    

@@ -4,7 +4,7 @@ metadata:
   name: logs
 spec:
   version: "v1.0.0"
-  image: "davidbackxdataroots/minio-func"
+  image: "davidbackxdataroots/minio-func:latest"
   imageCredentials:
     name: push-secret
   build:
