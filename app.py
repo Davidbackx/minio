@@ -5,7 +5,7 @@ import io
 
 def set_object(request):
     client = Minio(
-        "localhost:9000",
+        "10.244.0.19:9090",
         access_key="sQTWYbkJoNcF9qH764Je",
         secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
         secure=False,
@@ -37,3 +37,6 @@ def set_object(request):
     data = client.get_object(bucket_name, object_key).read()
     print(data)
     return data
+
+if __name__ == "__main__":
+    set_object(None)
