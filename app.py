@@ -3,7 +3,7 @@ from datetime import datetime
 import io
 
 
-def set_object(request):
+def minio_func(request):
     client = Minio(
         "localhost:9000",
         access_key="sQTWYbkJoNcF9qH764Je",
@@ -39,4 +39,4 @@ def set_object(request):
     return data
 
 if __name__ == "__main__":
-    set_object(None)
+    minio_func(None)
