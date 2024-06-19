@@ -5,7 +5,6 @@ import io
 
 def set_object(request):
     client = Minio(
-       # "10.244.0.19:9090",
         "localhost:9000",
         access_key="sQTWYbkJoNcF9qH764Je",
         secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
