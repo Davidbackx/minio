@@ -2,14 +2,14 @@ from minio import Minio
 from datetime import datetime
 import io
 
-client = Minio(
-    "localhost:9000",
-    access_key="sQTWYbkJoNcF9qH764Je",
-    secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
-    secure=False,
-)
 
 def minio_func(request):
+    client = Minio(
+        "10.244.0.19:9090",
+        access_key="sQTWYbkJoNcF9qH764Je",
+        secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
+        secure=False,
+    )
     bucket_name = "testbucket"
     object_key = "log.txt"
 
