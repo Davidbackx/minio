@@ -1,15 +1,15 @@
 apiVersion: core.openfunction.io/v1beta2
 kind: Function
 metadata:
-  name: kaniko-build
+  name: minio_flask
 spec:
   version: "v1.0.0"
-  image: "davidbackxdataroots/minio-func:latest"
+  image: "davidbackxdataroots/minio_flask:latest"
   imageCredentials:
     name: push-secret
   build:
     builder: openfunction/kaniko-executor:v1.7.0
-    dockerfile: app.Dockerfile
+    dockerfile: Dockerfile
     shipwright:
       strategy:
         kind: ClusterBuildStrategy
