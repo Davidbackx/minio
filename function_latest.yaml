@@ -1,7 +1,7 @@
 apiVersion: core.openfunction.io/v1beta2
 kind: Function
 metadata:
-  name: logs
+  name: minio-func
 spec:
   version: "latest"
   image: "davidbackxdataroots/minio-func:latest"
