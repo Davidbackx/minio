@@ -3,7 +3,7 @@ kind: Function
 metadata:
   name: minio-func
 spec:
-  version: "latest"
+  version: "v1.0.0"
   image: "davidbackxdataroots/minio-func:latest"
   imageCredentials:
     name: push-secret
