@@ -2,14 +2,14 @@ from minio import Minio
 from datetime import datetime
 import io
 
+client = Minio(
+    "10.244.0.19:9090",
+    access_key="sQTWYbkJoNcF9qH764Je",
+    secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
+    secure=False,
+)
 
 def minio_func(request):
-    client = Minio(
-        "10.244.0.19:9090",
-        access_key="sQTWYbkJoNcF9qH764Je",
-        secret_key="IgJTU0NLuzm8xyTNsvrmyw3JFGzQNdpfaw5ORUyV",
-        secure=False,
-    )
     bucket_name = "testbucket"
     object_key = "log.txt"
 
@@ -17,6 +17,12 @@ def minio_func(request):
         response = client.get_object(bucket_name, object_key)
         current_content = response.read().decode('utf-8')
         print('connection successful')
+        return 'connection successful'
+    
+    except Exception as e:
+        print(e)
+        print('connection failed')
+        return 'connection failed'
 
     finally:
         response.close()
