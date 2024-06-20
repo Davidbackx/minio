@@ -17,12 +17,10 @@ def minio_func(request):
         response = client.get_object(bucket_name, object_key)
         current_content = response.read().decode('utf-8')
         print('connection successful')
-        return 'connection successful'
     
     except Exception as e:
         print(e)
         print('connection failed')
-        return 'connection failed'
 
     finally:
         response.close()
@@ -51,7 +49,7 @@ def hello_world(request):
         print(request.data)
         print(request.form)
     
-    minio_func(request)
+    data = minio_func(request)
 
     print("Hello world")
-    return "hello world"
+    return data
