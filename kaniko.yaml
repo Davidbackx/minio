@@ -1,0 +1,27 @@
+apiVersion: core.openfunction.io/v1beta2
+kind: Function
+metadata:
+  name: kaniko-build
+spec:
+  version: "v1.0.0"
+  image: "davidbackxdataroots/minio-func:latest"
+  imageCredentials:
+    name: push-secret
+  build:
+    builder: openfunction/kaniko-executor:v1.7.0
+    dockerfile: app.Dockerfile
+    shipwright:
+      strategy:
+        kind: ClusterBuildStrategy
+        name: kaniko
+    srcRepo:
+      url: "https://github.com/Davidbackx/minio.git"
+      revision: "main"
+  serving:
+    template:
+      containers:
+        - name: function # DO NOT change this
+          imagePullPolicy: IfNotPresent
+    triggers:
+      http:
+        port: 8080
