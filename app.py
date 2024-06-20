@@ -51,5 +51,5 @@ def hello_world(request):
     
     data = minio_func(request)
 
-    print("Hello world")
+    print("Hello world 343")
     return data
