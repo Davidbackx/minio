@@ -10,7 +10,7 @@ spec:
   build:
     builder: "openfunction/gcp-builder:v1"
     env:
-      GOOGLE_FUNCTION_TARGET: "minio_func"
+      GOOGLE_FUNCTION_TARGET: "hello_world"
       GOOGLE_FUNCTION_SIGNATURE_TYPE: "http"
       GOOGLE_FUNCTION_SOURCE: "app.py"
     srcRepo:

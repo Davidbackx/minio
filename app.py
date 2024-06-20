@@ -38,5 +38,14 @@ def minio_func(request):
     print(data)
     return data
 
-if __name__ == "__main__":
-    minio_func(None)
+def hello_world(request):
+    if request.is_json:
+        print(request.json)
+    else:
+        print(request.data)
+        print(request.form)
+    
+    minio_func(request)
+
+    print("Hello world")
+    return "hello world"
